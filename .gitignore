@@ -11,3 +11,6 @@
 
 #executable
 cmd/cmd
+
+#config
+config.json
