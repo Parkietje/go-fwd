@@ -7,7 +7,7 @@ creates mailserver directory and generates example `config.json`:
 `$ git clone git@github.com:Parkietje/mailserver.git && cd mailserver && ./setup.sh`
 
 ## Configuration
-in config.json fill in for your email provider:
+in `config.json` fill in for your email provider:
 
 - username: your accountname with the email service provider
 - password: your password *
