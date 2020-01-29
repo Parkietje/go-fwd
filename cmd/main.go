@@ -15,9 +15,10 @@ type Configuration struct {
 
 //Authorization is a struct for authenticating with mail server
 type Authorization struct {
-	Username string
-	Password string
-	Server   string
+	Username string `json:"username"`
+	Password string `json:"password"`
+	Server   string `json:"server"`
+	Port     string `json:"port"`
 }
 
 // Mail is a mail
@@ -35,7 +36,7 @@ func config() Configuration {
 	decoder := json.NewDecoder(file)
 	err := decoder.Decode(&c)
 	if err != nil {
-		fmt.Println("error:", err)
+		fmt.Println("config error:", err)
 	}
 
 	return c
@@ -49,17 +50,20 @@ func main() {
 	myAuth := c.Auth
 	auth := smtp.PlainAuth("", myAuth.Username, myAuth.Password, myAuth.Server)
 
-	//incoming mail
+	fmt.Println(myAuth.Port)
+	//generate a JSON email and parse into Mail format
 	str := `{"sender": "yannichiodi@gmail.com", "body": "Hello, world!"}`
 	m := Mail{}
 	json.Unmarshal([]byte(str), &m)
 
+	//incoming mail
 	from := m.Sender
 	to := []string{myAuth.Username}
 	msg := []byte(m.Body)
+	fmt.Println("from: [" + from + "] to [" + to[0] + "] msg: [" + string(msg) + "]")
 
 	// Connect to the server, authenticate, set the sender and recipient,
-	err := smtp.SendMail(myAuth.Server, auth, from, to, msg)
+	err := smtp.SendMail(myAuth.Server+":"+myAuth.Port, auth, from, to, msg)
 	if err != nil {
 		log.Fatal(err)
 	}
