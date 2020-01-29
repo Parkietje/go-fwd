@@ -10,7 +10,7 @@
 *.code-workspace
 
 #executable
-cmd/cmd
+cmd/main
 
 #config
 config.json
