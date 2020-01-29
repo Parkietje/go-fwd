@@ -10,8 +10,8 @@ creates mailserver directory and generates example `config.json`:
 in `config.json` fill in for your email provider:
 
 - username: your accountname with the email service provider
-- password: your password *
-- server: [how to find your mail server](https://serversmtp.com/what-is-my-smtp/)
+- password: your password (*)
+- server: [how to find your provider's mail server](https://serversmtp.com/what-is-my-smtp/)
 - port: [use port 587](https://www.mailgun.com/blog/which-smtp-port-understanding-ports-25-465-587/)
 
 _(* if you are using google you might have to [generate 3rd party app password](https://support.google.com/accounts/answer/185833))_
