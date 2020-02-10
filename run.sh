@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #get directory (works on UNIX)
-cd $PWD/cmd
+cd $PWD
 
 #build application executable
-go build -o $PWD/main
+go build -o main .
 echo "build succes!"
 
 #run executable

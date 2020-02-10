@@ -1,13 +1,14 @@
-# Mailserver
-a simple mailing service written in go.
+# go-fwd
+a simple mail forwarding service written in go.
 
-## Setting up
-creates mailserver directory and generates example `config.json`:
+## 1) Setting up
+First, clone repo and generate example `config.json`:
 
-`$ git clone git@github.com:Parkietje/mailserver.git && cd mailserver && ./setup.sh`
+`$ git clone git@github.com:Parkietje/go-fwd.git && cd go-fwd && ./setup.sh`
 
-## Configuration
-in `config.json` fill in the following:
+
+## 2) Configuration
+Secondly, fill in `config.json`:
 
 #### authorization
 
@@ -18,7 +19,7 @@ in `config.json` fill in the following:
 
 _(* if you are using google you might have to [generate 3rd party app password](https://support.google.com/accounts/answer/185833))_
 
-## Run locally
-after filling in `config.json` you can run the mailservice:
+## 3) Run locally
+after filling in `config.json` you can test go-fwd:
 
 `$ ./run.sh`
