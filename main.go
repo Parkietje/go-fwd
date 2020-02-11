@@ -44,7 +44,7 @@ func Mail(w http.ResponseWriter, r *http.Request) {
 	c := config()
 
 	if r.URL.Path != "/" {
-		http.Error(w, "404 not found.", http.StatusNotFound)
+		http.Error(w, "404 not found. ", http.StatusNotFound)
 		return
 	}
 
