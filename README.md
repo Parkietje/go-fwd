@@ -20,6 +20,21 @@ Secondly, fill in `config.json`:
 _(* if you are using google you might have to [generate 3rd party app password](https://support.google.com/accounts/answer/185833))_
 
 ## 3) Run locally
-after filling in `config.json` you can test go-fwd:
+After filling in `config.json` you can test go-fwd by running it on localhost:
 
 `$ ./run.sh`
+
+In another terminal, make a POST request to the container:
+
+`$ ./post.sh`
+
+## 4) Dockerize
+Build a docker image from go-fwd:
+
+`$ ./docker-build.sh`
+
+Run the container locally:
+
+`$ ./docker-run.sh`
+
+
